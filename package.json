@@ -1,0 +1,24 @@
+{
+  "name": "personal-api-node",
+  "version": "1.0.0",
+  "description": "Start of the Personal API Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SJTreadway/Personal-API-Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SJTreadway/Personal-API-Node/issues"
+  },
+  "homepage": "https://github.com/SJTreadway/Personal-API-Node#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3"
+  }
+}
