@@ -44,6 +44,14 @@ module.exports = {
     res.json(hobbies);
   },
 
-  // getHobbiesType: function(req, res) {
-  //
-  // };
+  getHobbiesType: function(req, res) {
+    var hobby = req.params.type;
+    var hobbyType = [];
+    for (var i in hobbies) {
+      if (hobbies[i].type === hobby) {
+        hobbyType.push(hobbies[i]);
+      }
+    }
+    res.json(hobbyType);
+  }
+};

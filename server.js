@@ -15,4 +15,4 @@ app.get('/location', mainCtrl.getLocation);
 app.get('/occupations', mainCtrl.getOccupations);
 app.get('/occupations/latest', mainCtrl.getLatestOccupation);
 app.get('/hobbies', mainCtrl.getHobbies);
-// app.get('/hobbies/:type', mainCtrl.getHobbiesType);
+app.get('/hobbies/:type', mainCtrl.getHobbiesType);
