@@ -17,6 +17,11 @@ var hobbies = [{
   name: 'Sports',
   type: 'past'
 }];
+var skillz = [{
+  id: 1,
+  name: "Javascript",
+  experience: "Intermediate"
+}];
 
 module.exports = {
 
@@ -59,6 +64,21 @@ module.exports = {
       }
     }
     res.json(hobbyType);
+  },
+
+  getSkillz: function(req, res) {
+    res.json(skillz);
+  },
+
+  getSkillzExperience: function(req, res) {
+    var skill = req.params.experience;
+    var experience = [];
+    for (var i in skillz) {
+      if (skillz[i].experience.toLowerCase() === skill.toLowerCase()) {
+        experience.push(skillz[i]);
+      }
+    }
+    res.json(experience);
   },
 
   changeName: function(req, res) {
