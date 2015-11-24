@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var middleware = require('./controllers/middleware');
 var mainCtrl = require('./controllers/mainCtrl');
 var app = express();
 
