@@ -1,3 +1,9 @@
+var name = {
+  name: "Steven Treadway"
+};
+var location = {
+  location: "Dallas, TX"
+};
 var occupations = {
   occupations: ["Web Developer", "Bama Fanatic"]
 };
@@ -15,16 +21,10 @@ var hobbies = [{
 module.exports = {
 
   getName: function(req, res) {
-    var name = {
-      name: "Steven Treadway"
-    }
     res.json(name);
   },
 
   getLocation: function(req, res) {
-    var location = {
-      location: "Dallas, TX"
-    }
     res.json(location);
   },
 
@@ -60,4 +60,44 @@ module.exports = {
     }
     res.json(hobbyType);
   },
+
+  changeName: function(req, res) {
+    name = {
+      name: req.body.name,
+    };
+    res.json(name);
+  },
+
+  changeLocation: function(req, res) {
+    location = {
+      location: req.body.location,
+    };
+    res.json(location);
+  },
+
+  addOccupation: function(req, res) {
+    newOccupation = {
+      occupation: req.body.occupation
+    };
+    occupations.occupations.push(newOccupation.occupation);
+    res.json(newOccupation);
+  },
+
+  addHobby: function(req, res) {
+    newHobby = {
+      name: req.body.name,
+      type: req.body.type
+    };
+    hobbies.push(newHobby);
+    res.json(hobbies);
+  },
+
+
+
+
+
+
+
+
+
 };

@@ -16,3 +16,9 @@ app.get('/occupations', mainCtrl.getOccupations);
 app.get('/occupations/latest', mainCtrl.getLatestOccupation);
 app.get('/hobbies', mainCtrl.getHobbies);
 app.get('/hobbies/:type', mainCtrl.getHobbiesType);
+
+app.put('/name', mainCtrl.changeName);
+app.put('/location', mainCtrl.changeLocation);
+
+app.post('/occupations', mainCtrl.addOccupation);
+app.post('/hobbies', mainCtrl.addHobby);
