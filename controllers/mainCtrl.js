@@ -1,13 +1,13 @@
-var name = {
+name = {
   name: "Steven Treadway"
 };
-var location = {
+location = {
   location: "Dallas, TX"
 };
-var occupations = {
+occupations = {
   occupations: ["Web Developer", "Bama Fanatic"]
 };
-var hobbies = [{
+hobbies = [{
   name: 'Programming',
   type: 'current',
 }, {
@@ -17,7 +17,7 @@ var hobbies = [{
   name: 'Sports',
   type: 'past'
 }];
-var skillz = [{
+skillz = [{
   id: 1,
   name: "Javascript",
   experience: "Intermediate"
@@ -40,7 +40,7 @@ module.exports = {
     else {
       res.json(occupations.occupations.reverse());
     }
-    
+
   },
 
   getLatestOccupation: function(req, res) {
@@ -112,7 +112,14 @@ module.exports = {
     res.json(hobbies);
   },
 
-
+  addSkill: function(req, res) {
+    newSkill = {
+      name: req.body.name,
+      experience: req.body.experience
+    };
+    skillz.push(newSkill);
+    res.json(skillz);
+  },
 
 
 

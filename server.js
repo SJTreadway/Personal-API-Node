@@ -25,3 +25,4 @@ app.put('/location', mainCtrl.changeLocation);
 
 app.post('/occupations', mainCtrl.addOccupation);
 app.post('/hobbies', mainCtrl.addHobby);
+app.post('/skillz', middleware.generateId, mainCtrl.addSkill);
