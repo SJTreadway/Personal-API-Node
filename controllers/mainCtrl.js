@@ -29,7 +29,13 @@ module.exports = {
   },
 
   getOccupations: function(req, res) {
-    res.json(occupations);
+    if (req.query.id === 'asc') {
+      res.json(occupations.occupations.sort());
+    }
+    else {
+      res.json(occupations.occupations.reverse());
+    }
+    
   },
 
   getLatestOccupation: function(req, res) {
@@ -53,5 +59,5 @@ module.exports = {
       }
     }
     res.json(hobbyType);
-  }
+  },
 };
