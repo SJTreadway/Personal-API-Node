@@ -114,6 +114,7 @@ module.exports = {
 
   addSkill: function(req, res) {
     newSkill = {
+      id: skillz.id,
       name: req.body.name,
       experience: req.body.experience
     };
