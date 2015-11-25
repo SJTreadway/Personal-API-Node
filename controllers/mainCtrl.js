@@ -120,11 +120,4 @@ module.exports = {
     skillz.push(newSkill);
     res.json(skillz);
   },
-
-
-
-
-
-
-
 };
