@@ -1,19 +1,10 @@
+var idCounter = 2;
+
 module.exports = {
 
   generateId: function(req, res, next) {
-    var idCounter = 0;
-    // req.id = idCounter++;
-    // skillz.id = req.id;
-    for (var i in skillz) {
-      skillz[i].id = {
-        id: idCounter++,
-      }
-      skillz[i].id = idCounter++;
-      res.json(skillz)
-      next();
-    }
+  skillz.id = idCounter++;
+    res.json(skillz.id)
+    next();
   },
-
-
-
 };
