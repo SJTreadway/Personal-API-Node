@@ -14,10 +14,13 @@ app.listen(9001, function(e) {
 app.get('/name', mainCtrl.getName);
 app.get('/location', mainCtrl.getLocation);
 app.get('/occupations', mainCtrl.getOccupations);
+app.get('/occupations/name', mainCtrl.getOccupationsName);
 app.get('/occupations/latest', mainCtrl.getLatestOccupation);
 app.get('/hobbies', mainCtrl.getHobbies);
+app.get('/hobbies/name', mainCtrl.getHobbiesName);
 app.get('/hobbies/:type', mainCtrl.getHobbiesType);
 app.get('/skillz', mainCtrl.getSkillz);
+app.get('/skillz/name', mainCtrl.getSkillzName);
 app.get('/skillz/:experience', mainCtrl.getSkillzExperience);
 app.get('/secrets/:username/:pin', middleware.verifyUser, mainCtrl.getSecrets);
 

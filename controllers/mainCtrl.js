@@ -46,6 +46,19 @@ module.exports = {
 
   },
 
+  getOccupationsName: function(req, res) {
+    var name = req.query.name;
+    var names = [];
+    for (var i = 0; i < occupations.occupations.length; i++) {
+      if (name === (occupations.occupations[i].replace(/\s+/g, '')).toLowerCase()) {
+        names.push(occupations.occupations[i])
+        res.json(names);
+      }
+    }
+    res.status(400);
+    res.send("Occupation isn't listed.");
+  },
+
   getLatestOccupation: function(req, res) {
     var latestOccupation;
       latestOccupation = {
@@ -66,11 +79,48 @@ module.exports = {
         hobbyType.push(hobbies[i]);
       }
     }
-    res.json(hobbyType);
+    if (hobbyType.length === 0) {
+      res.send("The hobby type is not on the list.");
+    }
+    else {
+      res.json(hobbyType);
+    }
+  },
+
+  getHobbiesName: function(req, res) {
+    var name = req.query.name;
+    var names = [];
+    for (var i in hobbies) {
+      if (hobbies[i].name.toLowerCase() === name.toLowerCase()) {
+        names.push(hobbies[i]);
+      }
+    }
+    if (names.length === 0) {
+      res.send("The hobby is not on the list.");
+    }
+    else {
+      res.json(names);
+    }
   },
 
   getSkillz: function(req, res) {
     res.json(skillz);
+  },
+
+  getSkillzName: function(req, res) {
+    var name = req.query.name;
+    var names = [];
+    for (var i in skillz) {
+      if (skillz[i].name.toLowerCase() === name.toLowerCase()) {
+        names.push(skillz[i]);
+      }
+    }
+    if (names.length === 0) {
+      res.send("The skill is not on the list.");
+    }
+    else {
+      res.json(names);
+    }
   },
 
   getSkillzExperience: function(req, res) {
@@ -81,7 +131,12 @@ module.exports = {
         experience.push(skillz[i]);
       }
     }
-    res.json(experience);
+    if (experience.length === 0) {
+      res.send("This experience category does not exist.");
+    }
+    else {
+      res.json(experience);
+    }
   },
 
   getSecrets: function(req, res) {

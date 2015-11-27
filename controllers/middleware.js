@@ -19,5 +19,4 @@ module.exports = {
   		res.send('Wrong username/password. Try again.');
   	}
   },
-
 };
