@@ -11,13 +11,11 @@ module.exports = {
   },
 
   verifyUser: function(req, res, next) {
-  	console.log('params name', req.params.username, 'params pin', req.params.pin)
-  	console.log('steven', userName.toLowerCase());
-  	console.log('pin', pin)
-  	if ((req.params.username === userName.toLowerCase()) && (req.params.pin === pin)) {
+  	if (req.params.username.toLowerCase() === userName.toLowerCase() && parseInt(req.params.pin) === pin) {
   		next();
   	}
   	else {
+  		res.status(400);
   		res.send('Wrong username/password. Try again.');
   	}
   },
