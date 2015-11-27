@@ -22,6 +22,9 @@ skillz = [{
   name: "Javascript",
   experience: "Intermediate"
 }];
+secrets = {
+  secret: 'I love JavaScript!',
+};
 
 module.exports = {
 
@@ -79,6 +82,10 @@ module.exports = {
       }
     }
     res.json(experience);
+  },
+
+  getSecrets: function(req, res) {
+    res.json(secrets);
   },
 
   changeName: function(req, res) {

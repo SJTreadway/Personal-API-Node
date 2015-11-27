@@ -19,6 +19,7 @@ app.get('/hobbies', mainCtrl.getHobbies);
 app.get('/hobbies/:type', mainCtrl.getHobbiesType);
 app.get('/skillz', mainCtrl.getSkillz);
 app.get('/skillz/:experience', mainCtrl.getSkillzExperience);
+app.get('/secrets/:username/:pin', middleware.verifyUser, mainCtrl.getSecrets);
 
 app.put('/name', mainCtrl.changeName);
 app.put('/location', mainCtrl.changeLocation);
